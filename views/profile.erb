@@ -1,0 +1,12 @@
+<h2>Details for: <%= capitalize(@user_name) %></h2>
+<div class="pure-menu">
+  <p>Email: <%= @email %></p>
+  <p>Interests: <%= @interests.join(", ") %></p>
+</div>
+
+<h2>Current users:</h2>
+<% @users.each do |name, __| %>
+  <% unless name == @user_name %>
+    <a href="<%= name %>"><%= capitalize(name) %></a>
+  <% end %>
+<% end %>
